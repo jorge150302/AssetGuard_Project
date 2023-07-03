@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AssetGuard_Project.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Empleados</h1>
+
+<p>
+    <a asp-action="Create">Crear</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoPersonaEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaIngresoEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartamentoEmpleadoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPersonaEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaIngresoEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartamentoEmpleadoNavigation.DescripcionDepartamento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdEmpleado">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdEmpleado">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEmpleado">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
