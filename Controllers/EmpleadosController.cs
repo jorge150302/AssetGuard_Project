@@ -20,7 +20,7 @@ namespace AssetGuard_Project.Controllers
 
         // GET: Empleados
         public async Task<IActionResult> Index(string term)
-        {/*
+        {
             var AssetGuardDbContext = from t in _context.Empleados.Include(g => g.DepartamentoEmpleadoNavigation)
                                       select t;
 
@@ -34,8 +34,8 @@ namespace AssetGuard_Project.Controllers
                                                                       || s.DepartamentoEmpleadoNavigation.DescripcionDepartamento.Contains(term));
             }
 
-            return View(await AssetGuardDbContext.ToListAsync());*/
-            
+            return View(await AssetGuardDbContext.ToListAsync());
+            /*
             var AssetGuardDbContext = from t in _context.Empleados.Include(g => g.DepartamentoEmpleadoNavigation)
                          select t;
 
@@ -45,7 +45,7 @@ namespace AssetGuard_Project.Controllers
             }
 
             return View(await AssetGuardDbContext.ToListAsync());
-            
+            */
         }
 
         // GET: Empleados/Details/5

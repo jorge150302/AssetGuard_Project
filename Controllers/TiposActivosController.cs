@@ -19,11 +19,15 @@ namespace AssetGuard_Project.Controllers
         }
 
         // GET: TiposActivos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string term)
         {
-              return _context.TiposActivos != null ? 
-                          View(await _context.TiposActivos.ToListAsync()) :
-                          Problem("Entity set 'AssetGuardDbContext.TiposActivos'  is null.");
+            var AssetGuardDbContext = from h in _context.TiposActivos select h;
+
+            return View(await AssetGuardDbContext.Where(x => term == null
+            || x.IdTa.ToString().StartsWith(term)
+            || x.DescripcionTa.Contains(term)
+            || x.CuentaContableCompraTa.ToString().Contains(term)
+            || x.CuentaContableDepreciacionTa.ToString().Contains(term)).ToListAsync());
         }
 
         // GET: TiposActivos/Details/5
