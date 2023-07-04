@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AssetGuard_Project.Models.TiposActivo>
+
+@{
+    ViewData["Title"] = "Tipos de Activo";
+}
+
+<h1>Tipos de Activo</h1>
+
+<p>
+    <a asp-action="Create">Crear</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionTa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuentaContableCompraTa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuentaContableDepreciacionTa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoTa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuentaContableCompraTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuentaContableDepreciacionTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoTa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdTa">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdTa">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdTa">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
