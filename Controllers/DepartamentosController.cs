@@ -19,11 +19,16 @@ namespace AssetGuard_Project.Controllers
         }
 
         // GET: Departamentos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string term)
         {
-              return _context.Departamentos != null ? 
-                          View(await _context.Departamentos.ToListAsync()) :
-                          Problem("Entity set 'AssetGuardDbContext.Departamentos'  is null.");
+            var AssetGuardDbContext = from h in _context.Departamentos select h;
+
+            return View(await AssetGuardDbContext.Where(x => term == null
+            || x.IdDepartamento.ToString().StartsWith(term)
+            || x.DescripcionDepartamento.Contains(term)
+            || x.EstadoDepartamento.Contains(term)).ToListAsync());
+
+
         }
 
         // GET: Departamentos/Details/5

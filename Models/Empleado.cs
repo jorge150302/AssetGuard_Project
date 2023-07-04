@@ -31,7 +31,7 @@ public partial class Empleado
 
     [Display(Name = "Fecha de ingreso")]
     [Required(ErrorMessage = "La fecha de ingreso es obligatoria.")]
-    [DataType(DataType.DateTime)]
+    [DataType(DataType.Date)]
     public DateTime? FechaIngresoEmpleado { get; set; }
 
     [Display(Name = "Estado")]
