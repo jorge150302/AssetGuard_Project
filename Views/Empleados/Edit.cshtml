@@ -21,6 +21,13 @@
             <div class="form-group">
                 <label asp-for="CedulaEmpleado" class="control-label"></label>
                 <input asp-for="CedulaEmpleado" class="form-control" />
+
+                @if (ViewData["CedulaError"] == null)
+                {
+                    <span asp-validation-for="CedulaEmpleado" class="text-danger"></span>
+
+                }
+
                 @if (ViewData["CedulaError"] != null)
                     {
                         <span class="text-danger">@ViewData["CedulaError"]</span>

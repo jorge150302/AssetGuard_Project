@@ -20,7 +20,22 @@ namespace AssetGuard_Project.Controllers
 
         // GET: Empleados
         public async Task<IActionResult> Index(string term)
-        {
+        {/*
+            var AssetGuardDbContext = from t in _context.Empleados.Include(g => g.DepartamentoEmpleadoNavigation)
+                                      select t;
+
+            if (!String.IsNullOrEmpty(term))
+            {
+                AssetGuardDbContext = AssetGuardDbContext.Where(s => s.CedulaEmpleado!.Contains(term)
+                                                                      || s.NombreEmpleado!.Contains(term)
+                                                                      || s.TipoPersonaEmpleado!.Contains(term)
+                                                                      || s.EstadoEmpleado!.Contains(term)
+                                                                      || s.TipoPersonaEmpleado!.Contains(term)
+                                                                      || s.DepartamentoEmpleadoNavigation.DescripcionDepartamento.Contains(term));
+            }
+
+            return View(await AssetGuardDbContext.ToListAsync());*/
+            
             var AssetGuardDbContext = from t in _context.Empleados.Include(g => g.DepartamentoEmpleadoNavigation)
                          select t;
 
@@ -30,7 +45,7 @@ namespace AssetGuard_Project.Controllers
             }
 
             return View(await AssetGuardDbContext.ToListAsync());
-
+            
         }
 
         // GET: Empleados/Details/5

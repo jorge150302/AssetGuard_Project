@@ -20,6 +20,7 @@ public partial class Empleado
     [Display(Name = "Cédula")]
     [StringLength(11, ErrorMessage = "Mínimo permitido de 11 caracteres", MinimumLength = 11)]
     [Required(ErrorMessage = "La cédula es obligatoria")]
+    [RegularExpression("([0-9]+)", ErrorMessage = "Ingresar solo números")]
     public string? CedulaEmpleado { get; set; }
 
     [Display(Name = "Departamento")]
