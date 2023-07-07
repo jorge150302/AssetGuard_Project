@@ -19,11 +19,22 @@ namespace AssetGuard_Project.Controllers
         }
 
         // GET: ActivosFijos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string term)
         {
-            var assetGuardDbContext = _context.ActivosFijos.Include(a => a.DepartamentoAfNavigation).Include(a => a.TipoActivoAfNavigation);
-            return View(await assetGuardDbContext.ToListAsync());
+            var assetGuardDbContext = from t in _context.ActivosFijos.Include(a => a.DepartamentoAfNavigation).Include(a => a.TipoActivoAfNavigation)
+                                      select t;
 
+            if (!String.IsNullOrEmpty(term))
+            {
+                assetGuardDbContext = assetGuardDbContext.Where(s => s.DescripcionAf!.Contains(term)
+                                                                      || s.FechaRegistroAf!.ToString().Contains(term)
+                                                                      || s.ValorCompraAf!.ToString().Contains(term)
+                                                                      || s.DepreciacionAcumuladaAf!.ToString().Contains(term)
+                                                                      || s.TipoActivoAfNavigation.DescripcionTa.Contains(term)
+                                                                      || s.DepartamentoAfNavigation.DescripcionDepartamento.Contains(term));
+            }
+
+            return View(await assetGuardDbContext.ToListAsync());
 
         }
 
