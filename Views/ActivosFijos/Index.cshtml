@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<AssetGuard_Project.Models.ActivosFijo>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Activos Fijos";
 }
 
-<h1>Activos fijos</h1>
+<h1>Activos Fijos</h1>
 
 <p>
-    <a asp-action="Create">Crear</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Crear</a>
 </p>
 
 <form asp-controller="ActivosFijos" asp-action="Index">
@@ -63,9 +63,9 @@
                 @Html.DisplayFor(modelItem => item.TipoActivoAfNavigation.DescripcionTa)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdAf">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdAf">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdAf">Borrar</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdAf" class="btn btn-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdAf" class="btn btn-secondary">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdAf" class="btn btn-danger">Borrar</a>
             </td>
         </tr>
 }

@@ -7,7 +7,7 @@
 <h1>Departamentos</h1>
 
 <p>
-    <a asp-action="Create">Crear</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Crear</a>
 </p>
 
 <form asp-controller="Departamentos" asp-action="Index">
@@ -39,9 +39,9 @@
                 @Html.DisplayFor(modelItem => item.EstadoDepartamento)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdDepartamento">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdDepartamento">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdDepartamento">Borrar</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdDepartamento" class="btn btn-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdDepartamento" class="btn btn-secondary">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdDepartamento" class="btn btn-danger">Borrar</a>
             </td>
         </tr>
 }

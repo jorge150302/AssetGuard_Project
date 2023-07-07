@@ -7,7 +7,7 @@
 <h1>Empleados</h1>
 
 <p>
-    <a asp-action="Create">Crear</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Crear</a>
 </p>
 
 <form asp-controller="Empleados" asp-action="Index">
@@ -63,9 +63,9 @@
                 @Html.DisplayFor(modelItem => item.DepartamentoEmpleadoNavigation.DescripcionDepartamento)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdEmpleado">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdEmpleado">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdEmpleado">Borrar</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdEmpleado" class="btn btn-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdEmpleado" class="btn btn-secondary">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdEmpleado" class="btn btn-danger">Borrar</a>
             </td>
         </tr>
 }

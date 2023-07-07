@@ -7,7 +7,7 @@
 <h1>Tipos de Activo</h1>
 
 <p>
-    <a asp-action="Create">Crear</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Crear</a>
 </p>
 
 <form asp-controller="TiposActivos" asp-action="Index">
@@ -51,9 +51,9 @@
                 @Html.DisplayFor(modelItem => item.EstadoTa)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdTa">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdTa">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdTa">Borrar</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdTa" class="btn btn-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdTa" class="btn btn-secondary">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdTa" class="btn btn-danger">Borrar</a>
             </td>
         </tr>
 }
