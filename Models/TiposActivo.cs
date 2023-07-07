@@ -14,9 +14,10 @@ public partial class TiposActivo
 
     public string? DescripcionTa { get; set; }
     [Display(Name = "Cuenta Contable Compra")]
-
+    [Range(0, double.MaxValue, ErrorMessage = "Ingrese un número positivo")]
     public int? CuentaContableCompraTa { get; set; }
     [Display(Name = "Cuenta Contable Depreciación")]
+    [Range(0, double.MaxValue, ErrorMessage = "Ingrese un número positivo")]
 
     public int? CuentaContableDepreciacionTa { get; set; }
     [Display(Name = "Estado")]

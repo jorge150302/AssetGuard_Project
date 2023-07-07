@@ -1,0 +1,59 @@
+﻿@model AssetGuard_Project.Models.ActivosFijo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Activos fijos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdAf" />
+            <div class="form-group">
+                <label asp-for="DescripcionAf" class="control-label"></label>
+                <input asp-for="DescripcionAf" class="form-control" />
+                <span asp-validation-for="DescripcionAf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartamentoAf" class="control-label"></label>
+                <select asp-for="DepartamentoAf" class="form-control" asp-items="ViewBag.DepartamentoAf"></select>
+                <span asp-validation-for="DepartamentoAf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoActivoAf" class="control-label"></label>
+                <select asp-for="TipoActivoAf" class="form-control" asp-items="ViewBag.TipoActivoAf"></select>
+                <span asp-validation-for="TipoActivoAf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaRegistroAf" class="control-label"></label>
+                <input asp-for="FechaRegistroAf" class="form-control" />
+                <span asp-validation-for="FechaRegistroAf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorCompraAf" class="control-label"></label>
+                <input asp-for="ValorCompraAf" class="form-control" />
+                <span asp-validation-for="ValorCompraAf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepreciacionAcumuladaAf" class="control-label"></label>
+                <input asp-for="DepreciacionAcumuladaAf" class="form-control" />
+                <span asp-validation-for="DepreciacionAcumuladaAf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

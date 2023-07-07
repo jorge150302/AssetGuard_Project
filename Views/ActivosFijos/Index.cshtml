@@ -1,0 +1,73 @@
+﻿@model IEnumerable<AssetGuard_Project.Models.ActivosFijo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Activos fijos</h1>
+
+<p>
+    <a asp-action="Create">Crear</a>
+</p>
+
+<form asp-controller="Departamentos" asp-action="Index">
+    <p>
+        <input type="text" name="term" />
+        <input type="submit" value="Buscar" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionAf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistroAf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorCompraAf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepreciacionAcumuladaAf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartamentoAfNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoActivoAfNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionAf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistroAf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorCompraAf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepreciacionAcumuladaAf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartamentoAfNavigation.DescripcionDepartamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoActivoAfNavigation.DescripcionTa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdAf">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdAf">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdAf">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
