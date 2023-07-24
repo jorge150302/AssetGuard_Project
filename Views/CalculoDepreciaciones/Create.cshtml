@@ -1,0 +1,99 @@
+﻿@model AssetGuard_Project.Models.CalculoDepreciacion
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+<h4>Cálculo Depreciación</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AnoProcesoCd" class="control-label"></label>
+                <input asp-for="AnoProcesoCd" class="form-control" />
+                <span asp-validation-for="AnoProcesoCd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesProcesoCd" class="control-label"></label>
+                @Html.DropDownListFor(model => model.MesProcesoCd, new List<SelectListItem>
+                {
+                new SelectListItem { Text = "Enero", Value = "01", Selected = true },
+                new SelectListItem { Text = "Febrero", Value = "02" },
+                new SelectListItem { Text = "Marzo", Value = "03"},
+                new SelectListItem { Text = "Abril", Value = "04" },
+                new SelectListItem { Text = "Mayo", Value = "05"},
+                new SelectListItem { Text = "Junio", Value = "06" },
+                new SelectListItem { Text = "Julio", Value = "07" },
+                new SelectListItem { Text = "Agosto", Value = "08"},
+                new SelectListItem { Text = "Septiembre", Value = "09" },
+                new SelectListItem { Text = "Octubre", Value = "10"},
+                new SelectListItem { Text = "Noviembre ", Value = "11" },
+                new SelectListItem { Text = "Diciembre", Value = "12" }
+                }, new { @class = "form-control" })
+                <span asp-validation-for="MesProcesoCd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActivoFijoCd" class="control-label"></label>
+                <select asp-for="ActivoFijoCd" class ="form-control" asp-items="ViewBag.ActivoFijoCd"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaProcesoCd" class="control-label"></label>
+                <input asp-for="FechaProcesoCd" class="form-control" />
+                <span asp-validation-for="FechaProcesoCd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MontoDepreciadoCd" class="control-label"></label>
+                <input asp-for="MontoDepreciadoCd" class="form-control" />
+                <span asp-validation-for="MontoDepreciadoCd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepreciacionAcumuladaCd" class="control-label"></label>
+                <input asp-for="DepreciacionAcumuladaCd" class="form-control" />
+                <span asp-validation-for="DepreciacionAcumuladaCd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CuentaCompra" class="control-label"></label>
+                @Html.DropDownListFor(model => model.CuentaCompra, new List<SelectListItem>
+                {
+                new SelectListItem { Text = "Activos", Value = "1", Selected = true },
+                new SelectListItem { Text = "Pasivos", Value = "2" },
+                new SelectListItem { Text = "Capital", Value = "3"},
+                new SelectListItem { Text = "Ingresos", Value = "4" },
+                new SelectListItem { Text = "Costos", Value = "5"},
+                new SelectListItem { Text = "Gastos", Value = "6" }
+                }, new { @class = "form-control" })
+
+                <span asp-validation-for="CuentaCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CuentaDepreciacion" class="control-label"></label>
+                @Html.DropDownListFor(model => model.CuentaDepreciacion, new List<SelectListItem>
+                {
+                new SelectListItem { Text = "Activos", Value = "1", Selected = true },
+                new SelectListItem { Text = "Pasivos", Value = "2" },
+                new SelectListItem { Text = "Capital", Value = "3"},
+                new SelectListItem { Text = "Ingresos", Value = "4" },
+                new SelectListItem { Text = "Costos", Value = "5"},
+                new SelectListItem { Text = "Gastos", Value = "6" }
+                }, new { @class = "form-control" })
+                <span asp-validation-for="CuentaDepreciacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" /> |
+                <a asp-action="Index" class="btn btn-info">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

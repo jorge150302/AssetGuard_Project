@@ -1,0 +1,85 @@
+﻿@model IEnumerable<AssetGuard_Project.Models.CalculoDepreciacion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cálculo Depreciaciónes</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Crear</a>
+</p>
+
+<form asp-controller="CalculoDepreciaciones" asp-action="Index">
+    <p>
+        <input type="text" name="term" />
+        <input type="submit" value="Buscar" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AnoProcesoCd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MesProcesoCd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaProcesoCd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoDepreciadoCd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepreciacionAcumuladaCd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuentaCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuentaDepreciacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivoFijoCdNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnoProcesoCd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MesProcesoCd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaProcesoCd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoDepreciadoCd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepreciacionAcumuladaCd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuentaCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuentaDepreciacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivoFijoCdNavigation.DescripcionAf)
+            </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdCd" class="btn btn-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdCd" class="btn btn-secondary">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdCd" class="btn btn-danger">Borrar</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
