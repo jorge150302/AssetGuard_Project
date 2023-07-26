@@ -9,13 +9,13 @@ public partial class CalculoDepreciacion
   
     public int IdCd { get; set; }
 
-    [Display(Name = "Año Proceso")]
+    [Display(Name = "Años del Proceso")]
     [Required(ErrorMessage = "Debe ingresar el Año")]
     [StringLength(4)]
     [Range(0, int.MaxValue, ErrorMessage = "Ingrese un Año en valor numerico")]
     public string? AnoProcesoCd { get; set; }
 
-    [Display(Name = "Mes Proceso")]
+    [Display(Name = "Meses del Proceso")]
     [Required(ErrorMessage = "Debe ingresar el Mes")]
     [StringLength(2)]
     [RegularExpression("([0-9]+)", ErrorMessage = "Ingrese un Mes en valor numerico")]
@@ -34,10 +34,10 @@ public partial class CalculoDepreciacion
     [Range(0, double.MaxValue, ErrorMessage = "Ingrese un número positivo")]
     public decimal? MontoDepreciadoCd { get; set; }
 
-    [Display(Name = "Depreciación acumulada")]
-    [Required(ErrorMessage = "Debe ingresar la depreciación acumulada")]
-    [Range(0, double.MaxValue, ErrorMessage = "Ingrese un número positivo")]
-    public decimal? DepreciacionAcumuladaCd { get; set; }
+   [Display(Name = "Depreciación acumulada")]
+   //[Required(ErrorMessage = "Debe ingresar la depreciación acumulada")]
+   //[Range(0, double.MaxValue, ErrorMessage = "Ingrese un número positivo")]
+    public decimal  DepreciacionAcumuladaCd { get; set; }
 
     [Display(Name = "Cuenta Compra")]
     [Required(ErrorMessage = "Debe ingresar la Cuenta de Compra")]
@@ -48,4 +48,11 @@ public partial class CalculoDepreciacion
     public int? CuentaDepreciacion { get; set; }
     [Display(Name = "Activo Fijo")]
     public virtual ActivosFijo? ActivoFijoCdNavigation { get; set; }
+
+    public static decimal CalcularDepreciacionAcumulada(decimal Monto, int CantidadAños)
+    {
+        return Monto / CantidadAños;
+    }
+
 }
+

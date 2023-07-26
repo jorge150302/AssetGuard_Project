@@ -154,14 +154,29 @@ namespace AssetGuard_Project.Controllers
             {
                 _context.CalculoDepreciacions.Remove(calculoDepreciacion);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CalculoDepreciacionExists(int id)
         {
-          return (_context.CalculoDepreciacions?.Any(e => e.IdCd == id)).GetValueOrDefault();
+            return (_context.CalculoDepreciacions?.Any(e => e.IdCd == id)).GetValueOrDefault();
         }
+
+        /// <summary>
+        /// ///////////////////////////////////////////////////////////////////////
+        /// </summary>
+
+
+
+
+
+
+
+
+
     }
 }
+
+
