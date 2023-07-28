@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AssetGuard_Project.Models;
+using System.Text;
 
 namespace AssetGuard_Project.Controllers
 {
@@ -169,6 +170,52 @@ namespace AssetGuard_Project.Controllers
         /// </summary>
 
 
+        [HttpPost]
+        public async Task<ActionResult> EnviarJSON(string Descripcion, int Auxiliar, int CuentaDB, int CuentaCR, decimal Monto)
+        {
+            // Objeto que deseas enviar en el JSON
+            var dataToSend = new
+            {
+                Descripcion = Descripcion,
+                Auxiliar = Auxiliar,
+                CuentaDB = CuentaDB,
+                CuentaCR = CuentaCR,
+                Monto = Monto
+            };
+
+            // Serializar el objeto a JSON
+            string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(dataToSend);
+
+            // URL de la API
+            string apiUrl = "http://129.80.203.120:5000/post-accounting-entries";
+
+            // Crear cliente HTTP
+            using (var httpClient = new HttpClient())
+            {
+                // Configurar encabezados para indicar JSON
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                // Contenido del JSON
+                var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                // Enviar la solicitud POST a la API
+                HttpResponseMessage response = await httpClient.PostAsync(apiUrl, content);
+
+                // Procesar la respuesta de la API si es necesario
+                if (response.IsSuccessStatusCode)
+                {
+                    // Obtener la respuesta de la API como texto (puedes usar otros métodos de lectura según lo que retorne tu API)
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    // Realizar acciones con la respuesta recibida, si es necesario
+
+                    // Retornar la respuesta como texto (puedes personalizar esto según tus necesidades)
+                    return Content(apiResponse);
+                }
+
+                // Manejar errores si la solicitud no fue exitosa
+                return Content("Error en la solicitud a la API");
+            }
 
 
 
@@ -176,7 +223,8 @@ namespace AssetGuard_Project.Controllers
 
 
 
+        }
     }
-}
+}   
 
 
