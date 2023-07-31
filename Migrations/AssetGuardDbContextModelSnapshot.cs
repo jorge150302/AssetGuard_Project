@@ -64,7 +64,7 @@ namespace AssetGuard_Project.Migrations
 
                     b.HasIndex("TipoActivoAf");
 
-                    b.ToTable("ActivosFijos");
+                    b.ToTable("ActivosFijos", (string)null);
                 });
 
             modelBuilder.Entity("AssetGuard_Project.Models.CalculoDepreciacion", b =>
@@ -139,7 +139,7 @@ namespace AssetGuard_Project.Migrations
                     b.HasKey("IdDepartamento")
                         .HasName("PK__Departam__787A433DF01BE3B3");
 
-                    b.ToTable("Departamentos");
+                    b.ToTable("Departamentos", (string)null);
                 });
 
             modelBuilder.Entity("AssetGuard_Project.Models.Empleado", b =>
@@ -216,7 +216,7 @@ namespace AssetGuard_Project.Migrations
                     b.HasKey("IdTa")
                         .HasName("PK__TiposAct__B7701AB7A654C049");
 
-                    b.ToTable("TiposActivos");
+                    b.ToTable("TiposActivos", (string)null);
                 });
 
             modelBuilder.Entity("AssetGuard_Project.Models.ActivosFijo", b =>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<AssetGuard_Project.Models.EnvioContabilidad>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionEC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auxiliar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuentaDB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CuentaCR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoEnvioContabilida)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionEC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auxiliar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuentaDB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CuentaCR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoEnvioContabilida)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdEC">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdEC">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEC">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -13,11 +13,7 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
-                <label asp-for="MesProcesoCd" class="control-label"></label>
-                <input asp-for="MesProcesoCd" class="form-control" />
-                <span asp-validation-for="MesProcesoCd" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="ActivoFijoCd" class="control-label"></label>
                 <select asp-for="ActivoFijoCd" class ="form-control" asp-items="ViewBag.ActivoFijoCd"></select>
@@ -27,25 +23,29 @@
                 <input asp-for="FechaProcesoCd" class="form-control" />
                 <span asp-validation-for="FechaProcesoCd" class="text-danger"></span>
             </div>
-     
-            
+            <div class="form-group">
+                <label asp-for="MontoDepreciadoCd" class="control-label"></label>
+                <input asp-for="MontoDepreciadoCd" class="form-control" id="montoInput" />
+                <span asp-validation-for="MontoDepreciadoCd" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="AnoProcesoCd" class="control-label"></label>
                 <input asp-for="AnoProcesoCd" class="form-control" id="anoInput" />
                 <span asp-validation-for="AnoProcesoCd" class="text-danger"></span>
             </div>
             
-            <div class="form-group">
-                <label asp-for="MontoDepreciadoCd" class="control-label"></label>
-                <input asp-for="MontoDepreciadoCd" class="form-control" id="montoInput" />
-                <span asp-validation-for="MontoDepreciadoCd" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="DepreciacionAcumuladaCd" class="control-label"></label>
                 <input asp-for="DepreciacionAcumuladaCd" class="form-control" id="depreciacionAcumuladaInput" readonly />
                 <span asp-validation-for="DepreciacionAcumuladaCd" class="text-danger"></span>
-            </div>  
-           
+            </div>
+            <div class="form-group">
+                <label asp-for="MesProcesoCd" class="control-label"></label>
+                <input asp-for="MesProcesoCd" class="form-control" id="mesesInput" readonly />
+                <span asp-validation-for="MesProcesoCd" class="text-danger"></span>
+            </div>
 
 
             <div class="form-group">
@@ -90,7 +90,8 @@
         const montoInput = document.getElementById('montoInput');
         const anoInput = document.getElementById('anoInput');
         const depreciacionAcumuladaInput = document.getElementById('depreciacionAcumuladaInput');
-
+        const mesesInput = document.getElementById('mesesInput');
+        
        
         function calcularDepreciacionAcumulada() {
             const monto = parseFloat(montoInput.value);
@@ -102,11 +103,14 @@
             }
 
             const depreciacionAcumulada = monto / cantidadAnos;
+            const meses = 12 * cantidadAnos;
             depreciacionAcumuladaInput.value = depreciacionAcumulada.toFixed(2);
+            mesesInput.value = meses;
         }
 
        
         montoInput.addEventListener('input', calcularDepreciacionAcumulada);
         anoInput.addEventListener('input', calcularDepreciacionAcumulada);
+
     });
 </script>

@@ -96,6 +96,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnviosContabilidads/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9zQ29udGFiaWxpZGFkc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnviosContabilidads/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9zQ29udGFiaWxpZGFkc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnviosContabilidads/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9zQ29udGFiaWxpZGFkc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnviosContabilidads/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9zQ29udGFiaWxpZGFkc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnviosContabilidads/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9zQ29udGFiaWxpZGFkc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
