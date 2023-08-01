@@ -17,7 +17,6 @@ public partial class CalculoDepreciacion
 
     [Display(Name = "Meses del Proceso")]
     [Required(ErrorMessage = "Debe ingresar el Mes")]
-    [StringLength(2)]
     [RegularExpression("([0-9]+)", ErrorMessage = "Ingrese un Mes en valor numerico")]
     public string? MesProcesoCd { get; set; }
 
@@ -33,10 +32,9 @@ public partial class CalculoDepreciacion
     [Required(ErrorMessage = "Debe ingresar un monto depreciado")]
     [Range(0, double.MaxValue, ErrorMessage = "Ingrese un número positivo")]
     public decimal? MontoDepreciadoCd { get; set; }
+    public virtual ICollection<EnvioContabilidad> EnvioContabilidads { get; set; } = new List<EnvioContabilidad>();
 
-   [Display(Name = "Depreciación acumulada")]
-   //[Required(ErrorMessage = "Debe ingresar la depreciación acumulada")]
-   //[Range(0, double.MaxValue, ErrorMessage = "Ingrese un número positivo")]
+    [Display(Name = "Depreciación acumulada")]
     public decimal  DepreciacionAcumuladaCd { get; set; }
 
     [Display(Name = "Cuenta Compra")]
@@ -48,6 +46,8 @@ public partial class CalculoDepreciacion
     public int? CuentaDepreciacion { get; set; }
     [Display(Name = "Activo Fijo")]
     public virtual ActivosFijo? ActivoFijoCdNavigation { get; set; }
+
+   
 
     public static decimal CalcularDepreciacionAcumulada(decimal Monto, int CantidadAños)
     {

@@ -22,9 +22,7 @@ namespace AssetGuard_Project.Models
         [Display(Name = "Cuenta Crédito")] 
         public int? CuentaCR { get; set; }
         [Display(Name = "Monto")] 
-        public int MontoEnvioContabilida { get; set; }
-
-
+        public virtual CalculoDepreciacion? CalculoDepreciacionCdNavigation { get; set; }
 
     }
 }
