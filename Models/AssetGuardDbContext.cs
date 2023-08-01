@@ -28,7 +28,7 @@ public partial class AssetGuardDbContext : DbContext
     public virtual DbSet<EnvioContabilidad> EnvioContabilidad { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=MEME-PC\\MEME;Database=AssetGuardDB;Trusted_Connection=True;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=.;Database=AssetGuardDB;Trusted_Connection=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -145,6 +145,29 @@ public partial class AssetGuardDbContext : DbContext
                 .HasMaxLength(8)
                 .IsUnicode(false)
                 .HasColumnName("EstadoTA");
+        });
+
+        modelBuilder.Entity<EnvioContabilidad>(entity =>
+        {
+            entity.HasKey(e => e.IdEC).HasName("PK__EnvioCon__B7738042C2B8E81E");
+
+            entity.ToTable("EnvioContabilidad");
+
+            entity.Property(e => e.IdEC).HasColumnName("IdEC");
+
+            entity.Property(e => e.CuentaCR).HasColumnName("CuentaCR");
+
+            entity.Property(e => e.CuentaDB).HasColumnName("CuentaDB");
+
+            entity.Property(e => e.DescripcionEC)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("DescripcionEC");
+
+            entity.HasOne(d => d.CalculoDepreciacionCdNavigation)
+                .WithMany(p => p.EnvioContabilidads)
+                .HasForeignKey(d => d.MontoEnvioContabilidad)
+                .HasConstraintName("FK__EnvioCont__Monto__5CD6CB2B");
         });
 
         OnModelCreatingPartial(modelBuilder);

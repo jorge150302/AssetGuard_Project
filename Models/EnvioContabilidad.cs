@@ -1,28 +1,30 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace AssetGuard_Project.Models
+namespace AssetGuard_Project.Models;
+
+public class EnvioContabilidad
 {
-    public class EnvioContabilidad
-    {
 
-        [Key]
-        [Required]
-        public int IdEC { get; set; }
+    [Key]
+    [Required]
+    public int IdEC { get; set; }
 
-        [Display(Name = "Descripción")]
-        [Required(ErrorMessage = "Debe ingresar una descripción")]
-        [StringLength(50)]
-        public string? DescripcionEC { get; set; }
+    [Display(Name = "Descripción")]
+    [Required(ErrorMessage = "Debe ingresar una descripción")]
+    [StringLength(50)]
+    public string? DescripcionEC { get; set; }
 
-        [Display(Name = "Auxiliar ")]
-        public int? Auxiliar { get; set; }
-        [Display(Name = "Cuenta Débito")]
-        public int? CuentaDB { get; set; }
-        
-        [Display(Name = "Cuenta Crédito")] 
-        public int? CuentaCR { get; set; }
-        [Display(Name = "Monto")] 
-        public virtual CalculoDepreciacion? CalculoDepreciacionCdNavigation { get; set; }
+    [Display(Name = "Auxiliar ")]
+    public int? Auxiliar { get; set; }
+    [Display(Name = "Cuenta Débito")]
+    public int? CuentaDB { get; set; }
+    
+    [Display(Name = "Cuenta Crédito")] 
+    public int? CuentaCR { get; set; }
+    [Display(Name = "Monto")]
+    public int? MontoEnvioContabilidad { get; set; }
+    public virtual CalculoDepreciacion? CalculoDepreciacionCdNavigation { get; set; }
 
-    }
 }

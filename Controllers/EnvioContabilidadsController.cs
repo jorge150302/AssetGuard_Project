@@ -55,7 +55,7 @@ namespace AssetGuard_Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdEC,DescripcionEC,Auxiliar,CuentaDB,CuentaCR")] EnvioContabilidad envioContabilidad)
+        public async Task<IActionResult> Create([Bind("IdEC,DescripcionEC,Auxiliar,CuentaDB,CuentaCR, MontoEnvioContabilidad")] EnvioContabilidad envioContabilidad)
         {
             if (ModelState.IsValid)
             {
