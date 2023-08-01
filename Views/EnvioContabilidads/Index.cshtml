@@ -4,11 +4,18 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Envio a Contabilidad</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-primary">Crear</a>
 </p>
+
+<form asp-controller="EnvioContabilidad" asp-action="Index">
+    <p>
+        <input type="text" name="term" />
+        <input type="submit" value="Buscar" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -50,9 +57,9 @@
                     @Html.DisplayFor(modelItem => item.MontoEnvioContabilidad)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdEC">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.IdEC">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IdEC">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdEC" class="btn btn-warning">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdEC" class="btn btn-secondary">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdEC" class="btn btn-danger">Borrar</a>
                 </td>
             </tr>
         }
