@@ -4,6 +4,7 @@ using AssetGuard_Project.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssetGuard_Project.Migrations
 {
     [DbContext(typeof(AssetGuardDbContext))]
-    partial class AssetGuardDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230801004142_Envio contabilidad agregado")]
+    partial class Enviocontabilidadagregado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

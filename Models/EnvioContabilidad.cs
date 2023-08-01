@@ -16,10 +16,10 @@ namespace AssetGuard_Project.Models
 
         [Display(Name = "Auxiliar ")]
         public int? Auxiliar { get; set; }
-        [Display(Name = "CuentaDB")]
+        [Display(Name = "Cuenta Débito")]
         public int? CuentaDB { get; set; }
         
-        [Display(Name = "CuentaCR")] 
+        [Display(Name = "Cuenta Crédito")] 
         public int? CuentaCR { get; set; }
         [Display(Name = "Monto")] 
         public int MontoEnvioContabilida { get; set; }
