@@ -15,46 +15,92 @@
             <input type="hidden" asp-for="IdEC" />
             <div class="form-group">
                 <label asp-for="DescripcionEC" class="control-label"></label>
-                <input asp-for="DescripcionEC" class="form-control" />
+                <input asp-for="DescripcionEC" class="form-control" id="DescripcionEC"/>
                 <span asp-validation-for="DescripcionEC" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Auxiliar" class="control-label"></label>
-                <input asp-for="Auxiliar" class="form-control"  readonly/>
+                <input asp-for="Auxiliar" class="form-control" id="Auxiliar" readonly />
                 <span asp-validation-for="Auxiliar" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CuentaDB" class="control-label"></label>
+                <div id="CuentaDB">
                 @Html.DropDownListFor(model => model.CuentaDB, new List<SelectListItem>
                 {
                 new SelectListItem { Text = "Gasto depreciación Activos Fijos", Value = "65", Selected = true},
                 new SelectListItem { Text = "Depreciación Acumulada Activos Fijos", Value = "66"}
                 }, new { @class = "form-control" })
+                </div>
                 <span asp-validation-for="CuentaDB" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CuentaCR" class="control-label"></label>
+                
                 @Html.DropDownListFor(model => model.CuentaCR, new List<SelectListItem>
                 {
                 new SelectListItem { Text = "Gasto depreciación Activos Fijos", Value = "65", Selected = true},
                 new SelectListItem { Text = "Depreciación Acumulada Activos Fijos", Value = "66"}
-                }, new { @class = "form-control" })
+                           }, new { @class = "form-control" }) 
+               
                 <span asp-validation-for="CuentaCR" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MontoEnvioContabilidad" class="control-label"></label>
-                <input asp-for="MontoEnvioContabilidad" class="form-control" />
+                <input asp-for="MontoEnvioContabilidad" class="form-control" id="MontoEnvioContabilidad"/>
                 <span asp-validation-for="MontoEnvioContabilidad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />|
-                <a asp-action="Index" class="btn btn-info">Regresar</a>
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a asp-action="Index" class="btn btn-info">Regresar</a>|
+                <button type="button" class="btn btn-primary" id="enviarBoton">Enviar</button>
             </div>
         </form>
     </div>
 </div>
+<div id="jsonDiv"></div>
 
+<div id="responseDiv"></div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("enviarBoton").addEventListener("click", function () {
+            // Obtener los datos del formulario
+            var data = {
+                descripcion: $("#DescripcionEC").val(),
+                auxiliar: 8,
+                cuentaDB: 66,
+                cuentaCR: 65,
+                monto: 4500.99
+            };
+
+            // Convertir a JSON
+            var jsonData = JSON.stringify(data);
+
+            // Mostrar el JSON en el div correspondiente
+            document.getElementById("jsonDiv").innerText = "JSON enviado: " + jsonData;
+
+            // Realizar la solicitud HTTP a la API utilizando fetch
+            fetch("http://129.80.203.120:5000/post-accounting-entries", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: jsonData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    // Mostrar la respuesta de la API en el div correspondiente
+                    
+                   document.getElementById("responseDiv").innerText = "Respuesta de la API: " + data;
+                })
+                .catch(error => {
+                    console.error("Error al enviar datos a la API:", error);
+                });
+            document.getElementById("responseDiv").innerText = "llegue?"
+        });
+    });
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

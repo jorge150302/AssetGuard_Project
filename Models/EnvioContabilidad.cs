@@ -25,6 +25,6 @@ public class EnvioContabilidad
     public int? CuentaCR { get; set; }
     [Display(Name = "Monto")]
     public int? MontoEnvioContabilidad { get; set; }
-    public virtual CalculoDepreciacion? CalculoDepreciacionCdNavigation { get; set; }
+    public virtual CalculoDepreciacion? MontoEnvioContabilidadNavigation { get; set; }
 
 }
