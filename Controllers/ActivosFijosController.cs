@@ -66,6 +66,11 @@ namespace AssetGuard_Project.Controllers
             return View();
         }
 
+        private bool DescripcionExists(string descripcion)
+        {
+            return _context.ActivosFijos.Any(af => af.DescripcionAf == descripcion);
+        }
+
         // POST: ActivosFijos/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -75,10 +80,20 @@ namespace AssetGuard_Project.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Verificar si la descripción ya existe
+                if (DescripcionExists(activosFijo.DescripcionAf))
+                {
+                    ModelState.AddModelError("DescripcionAf", "La descripción ya está registrada. Por favor, ingrese una descripción única.");
+                    ViewData["DepartamentoAf"] = new SelectList(_context.Departamentos, "IdDepartamento", "DescripcionDepartamento", activosFijo.DepartamentoAf);
+                    ViewData["TipoActivoAf"] = new SelectList(_context.TiposActivos, "IdTa", "DescripcionTa", activosFijo.TipoActivoAf);
+                    return View(activosFijo);
+                }
+
                 _context.Add(activosFijo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["DepartamentoAf"] = new SelectList(_context.Departamentos, "IdDepartamento", "DescripcionDepartamento", activosFijo.DepartamentoAf);
             ViewData["TipoActivoAf"] = new SelectList(_context.TiposActivos, "IdTa", "DescripcionTa", activosFijo.TipoActivoAf);
             return View(activosFijo);

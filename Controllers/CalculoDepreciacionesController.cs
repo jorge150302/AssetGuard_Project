@@ -48,7 +48,12 @@ namespace AssetGuard_Project.Controllers
         // GET: CalculoDepreciaciones/Create
         public IActionResult Create()
         {
-            ViewData["ActivoFijoCd"] = new SelectList(_context.ActivosFijos, "IdAf", "DescripcionAf");
+            // Filtrar los activos que aún no han sido utilizados en registros
+            var activosDisponibles = _context.ActivosFijos
+                .Where(a => !_context.CalculoDepreciacions.Any(c => c.ActivoFijoCd == a.IdAf))
+                .ToList();
+
+            ViewData["ActivoFijoCd"] = new SelectList(activosDisponibles, "IdAf", "DescripcionAf");
             return View();
         }
 
