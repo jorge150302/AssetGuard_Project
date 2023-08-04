@@ -31,19 +31,26 @@ namespace AssetGuard_Project.Controllers
                           Problem("Entity set 'AssetGuardDbContext.EnvioContabilidad'  is null.");
         }
 
-        public async Task<IActionResult> EnviarSolicitud()
+        public async Task<IActionResult> EnviarSolicitud(EnvioContabilidad datos)
         {
             try
             {
+                // Llamada de datos en el model 
+                string descripcionInput = datos.DescripcionEC;
+                int? auxiliarInput = datos.Auxiliar;
+                int? cuentaDBInput = datos.CuentaDB;
+                int? cuentaCRInput = datos.CuentaCR;
+                // falta el el monto po  que un no se a hecho la union 
+
                 // Crear el objeto de datos para enviar en la solicitud
                 var data = new
-                {
-                    descripcion = "Jorge Prueba2",
-                    auxiliar = 1,
-                    cuentaDB = 1,
-                    cuentaCR = 1,
-                    monto = 1000
-                };
+                 {
+                     descripcion = descripcionInput,
+                     auxiliar = auxiliarInput,
+                     cuentaDB = cuentaDBInput,
+                     cuentaCR = cuentaCRInput,
+                     monto = 1000
+                 };
 
                 // Convertir a JSON
                 var jsonData = JsonSerializer.Serialize(data);

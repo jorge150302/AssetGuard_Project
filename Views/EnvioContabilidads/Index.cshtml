@@ -16,13 +16,7 @@
         <input type="submit" value="Buscar" />
     </p>
 </form>
-<!-- Contenedor para mostrar el resultado de la API -->
-<div>
-    <button id="enviarButton">Enviar Solicitud</button>
-</div>
 
-<!-- Botón para enviar la solicitud a la API -->
-<button id="enviarBoton">Enviar solicitud a la API</button>
 
 <table class="table">
     <thead>
@@ -73,27 +67,3 @@
         }
     </tbody>
 </table>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        // Capturar el clic del botón y hacer la llamada al controlador
-        $("#enviarButton").click(function () {
-            // Realizar la llamada AJAX al controlador asincrónico
-            $.ajax({
-                url: '@Url.Action("EnviarSolicitud", "EnvioContabilidads")',
-                type: 'POST',
-                dataType: 'html',
-                success: function (data) {
-                    // Aquí puedes procesar la respuesta del controlador si es necesario
-                    // Por ejemplo, mostrar la respuesta en algún div en la vista
-                    $("#respuestaDiv").html(data);
-                },
-                error: function (xhr, status, error) {
-                    // Manejo de errores si es necesario
-                    console.error(error);
-                    alert("Ha ocurrido un error al realizar la solicitud.");
-                }
-            });
-        });
-    });
-</script>

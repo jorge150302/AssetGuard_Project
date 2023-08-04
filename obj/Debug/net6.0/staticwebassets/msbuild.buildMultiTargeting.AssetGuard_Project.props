@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AssetGuard_Project.props" />
+</Project>

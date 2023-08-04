@@ -20,9 +20,11 @@ namespace AssetGuard_Project.Controllers
         }
 
         // GET: CalculoDepreciaciones
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string term)
         {
             var assetGuardDbContext = _context.CalculoDepreciacions.Include(c => c.ActivoFijoCdNavigation);
+
+
             return View(await assetGuardDbContext.ToListAsync());
         }
 
