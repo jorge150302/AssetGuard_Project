@@ -222,7 +222,7 @@ namespace AssetGuard_Project.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("MontoEnvioContabilida")
+                    b.Property<int>("MontoEnvioContabilidad")
                         .HasColumnType("int");
 
                     b.HasKey("IdEC");
