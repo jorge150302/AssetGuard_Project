@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AssetGuard_Project.Models;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+
+
 
 namespace AssetGuard_Project.Controllers
 {
@@ -24,6 +29,55 @@ namespace AssetGuard_Project.Controllers
               return _context.EnvioContabilidad != null ? 
                           View(await _context.EnvioContabilidad.ToListAsync()) :
                           Problem("Entity set 'AssetGuardDbContext.EnvioContabilidad'  is null.");
+        }
+
+        public async Task<IActionResult> EnviarSolicitud()
+        {
+            try
+            {
+                // Crear el objeto de datos para enviar en la solicitud
+                var data = new
+                {
+                    descripcion = "Jorge Prueba2",
+                    auxiliar = 1,
+                    cuentaDB = 1,
+                    cuentaCR = 1,
+                    monto = 1000
+                };
+
+                // Convertir a JSON
+                var jsonData = JsonSerializer.Serialize(data);
+
+                // URL del endpoint
+                var url = "http://129.80.203.120:5000/post-accounting-entries";
+
+                // Realizar la solicitud HTTP POST de forma asincrónica
+                using (var httpClient = new HttpClient())
+                {
+                    // Establecer el encabezado Content-Type
+                    httpClient.DefaultRequestHeaders.Accept.Clear();
+                    httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                    // Crear el contenido JSON de la solicitud
+                    var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+                    // Enviar la solicitud POST y obtener la respuesta de forma asincrónica
+                    var response = await httpClient.PostAsync(url, content);
+
+                    // Leer el contenido de la respuesta como una cadena JSON de forma asincrónica
+                    var responseContent = await response.Content.ReadAsStringAsync();
+
+                    // Puedes procesar la respuesta según sea necesario y retornarla o mostrarla en la vista
+                    // ...
+
+                    return Content(responseContent); // Por ejemplo, retornar el contenido de la respuesta como una cadena en la vista
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores si es necesario
+                return Problem("Error al realizar la solicitud HTTP: " + ex.Message);
+            }
         }
 
         // GET: EnvioContabilidads/Details/5

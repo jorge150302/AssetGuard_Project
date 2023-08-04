@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\AssetGuard_Project\\AssetGuard_Project.csproj": {}
+    "C:\\Users\\jorge\\source\\repos\\AssetGuard_Project\\AssetGuard_Project.csproj": {}
   },
   "projects": {
-    "C:\\AssetGuard_Project\\AssetGuard_Project.csproj": {
+    "C:\\Users\\jorge\\source\\repos\\AssetGuard_Project\\AssetGuard_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\AssetGuard_Project\\AssetGuard_Project.csproj",
+        "projectUniqueName": "C:\\Users\\jorge\\source\\repos\\AssetGuard_Project\\AssetGuard_Project.csproj",
         "projectName": "AssetGuard_Project",
-        "projectPath": "C:\\AssetGuard_Project\\AssetGuard_Project.csproj",
-        "packagesPath": "C:\\Users\\Erick Laun\\.nuget\\packages\\",
-        "outputPath": "C:\\AssetGuard_Project\\obj\\",
+        "projectPath": "C:\\Users\\jorge\\source\\repos\\AssetGuard_Project\\AssetGuard_Project.csproj",
+        "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jorge\\source\\repos\\AssetGuard_Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Erick Laun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -72,8 +71,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -85,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

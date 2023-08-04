@@ -7,6 +7,10 @@
 <h1>Editar</h1>
 
 <h4>Envio a Contabilidad</h4>
+
+<div>
+    <button id="enviarButton">Enviar Solicitud</button>
+</div>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -98,6 +102,31 @@
                     console.error("Error al enviar datos a la API:", error);
                 });
             document.getElementById("responseDiv").innerText = "llegue?"
+        });
+    });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Capturar el clic del botón y hacer la llamada al controlador
+        $("#enviarButton").click(function () {
+            // Realizar la llamada AJAX al controlador asincrónico
+            $.ajax({
+                url: '@Url.Action("EnviarSolicitud", "EnvioContabilidads")',
+                type: 'POST',
+                dataType: 'html',
+                success: function (data) {
+                    // Aquí puedes procesar la respuesta del controlador si es necesario
+                    // Por ejemplo, mostrar la respuesta en algún div en la vista
+                    $("#respuestaDiv").html(data);
+                },
+                error: function (xhr, status, error) {
+                    // Manejo de errores si es necesario
+                    console.error(error);
+                    alert("Ha ocurrido un error al realizar la solicitud.");
+                }
+            });
         });
     });
 </script>
