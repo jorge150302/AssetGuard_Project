@@ -48,8 +48,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="MontoEnvioContabilidad" class="control-label"></label>
-                <input asp-for="MontoEnvioContabilidad" class="form-control" id="MontoEnvioContabilidad"/>
-                <span asp-validation-for="MontoEnvioContabilidad" class="text-danger"></span>
+                <select asp-for="MontoEnvioContabilidad" class="form-control" asp-items="ViewBag.MontoEnvioContabilidad" id="MontoEnvioContabilidad"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary" /> |
@@ -72,17 +71,24 @@
         // Capturar el clic del botón y hacer la llamada al controlador
         $("#enviarButton").click(function () {
             var Descripcion = $("#DescripcionEC").val();
-            var Auxiliar = $("#Auxiliar").val();
-            var CuentaDB = $("#CuentaDBDropDownList").val();
-            var CuentaCR = $("#CuentaCRDropDownList").val();
-            var Descripcion = $("#MontoEnvioContabilidad").val();
+            var Auxiliar = parseInt($("#Auxiliar").val());
+            var CuentaDB = parseInt($("#CuentaDBDropDownList").val());
+            var CuentaCR = parseInt($("#CuentaCRDropDownList").val());
+            var MontoEnvioContabilidad = parseFloat($("#MontoEnvioContabilidad").val());
 
-
+            var dataToSend = {
+                descripcion: Descripcion,
+                auxiliar: Auxiliar,
+                cuentaDB: CuentaDB,
+                cuentaCR: CuentaCR,
+                monto: MontoEnvioContabilidad
+            };
             // Realizar la llamada AJAX al controlador asincrónico
             $.ajax({
                 url: '@Url.Action("EnviarSolicitud", "EnvioContabilidads")',
                 type: 'POST',
                 dataType: 'html',
+                data: dataToSend,
                 success: function (data) {
                     // Aquí puedes procesar la respuesta del controlador si es necesario
                     // Por ejemplo, mostrar la respuesta en algún div en la vista

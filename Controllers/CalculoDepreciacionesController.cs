@@ -172,11 +172,6 @@ namespace AssetGuard_Project.Controllers
             return (_context.CalculoDepreciacions?.Any(e => e.IdCd == id)).GetValueOrDefault();
         }
 
-        /// <summary>
-        /// ///////////////////////////////////////////////////////////////////////
-        /// </summary>
-
-
 
     }
 }   

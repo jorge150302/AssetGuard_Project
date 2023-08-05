@@ -165,6 +165,8 @@ public partial class AssetGuardDbContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("DescripcionEC");
 
+            entity.Property(e => e.MontoEnvioContabilidad).HasColumnName("MontoEnvioContabilidad");
+
             entity.HasOne(d => d.MontoEnvioContabilidadNavigation)
                 .WithMany(p => p.EnvioContabilidades)
                 .HasForeignKey(d => d.MontoEnvioContabilidad)

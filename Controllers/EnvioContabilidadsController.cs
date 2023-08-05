@@ -32,15 +32,16 @@ namespace AssetGuard_Project.Controllers
             return View(await assetGuardDbContext.ToListAsync());
         }
         // ENVIO CONTA
-        public async Task<IActionResult> EnviarSolicitud(EnvioContabilidad datos)
+        public async Task<IActionResult> EnviarSolicitud(string Descripcion, int Auxiliar, int CuentaDB, int CuentaCR, decimal MontoEnvioContabilidad)
         {
             try
             {
                 // Llamada de datos en el model 
-                string descripcionInput = datos.DescripcionEC;
-                int? auxiliarInput = datos.Auxiliar;
-                int? cuentaDBInput = datos.CuentaDB;
-                int? cuentaCRInput = datos.CuentaCR;
+                string descripcionInput = Descripcion;
+                int? auxiliarInput = Auxiliar;
+                int? cuentaDBInput = CuentaDB;
+                int? cuentaCRInput = CuentaCR;
+                decimal? MontoEnvioContabilidadInput = MontoEnvioContabilidad;
                 // falta el el monto po  que un no se a hecho la union 
 
                 // Crear el objeto de datos para enviar en la solicitud
@@ -50,8 +51,8 @@ namespace AssetGuard_Project.Controllers
                      auxiliar = auxiliarInput,
                      cuentaDB = cuentaDBInput,
                      cuentaCR = cuentaCRInput,
-                     monto = 1000
-                 };
+                     monto = MontoEnvioContabilidadInput
+                };
 
                 // Convertir a JSON
                 var jsonData = JsonSerializer.Serialize(data);
@@ -119,7 +120,7 @@ namespace AssetGuard_Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdEC,DescripcionEC,Auxiliar,CuentaDB,CuentaCR, MontoEnvioContabilidad")] EnvioContabilidad envioContabilidad)
+        public async Task<IActionResult> Create([Bind("IdEC,DescripcionEC,Auxiliar,CuentaDB,CuentaCR,MontoEnvioContabilidad")] EnvioContabilidad envioContabilidad)
         {
             if (ModelState.IsValid)
             {
@@ -127,7 +128,7 @@ namespace AssetGuard_Project.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MontoEnvioContabilidad"] = new SelectList(_context.CalculoDepreciacions, "IdCd", "IdCd", envioContabilidad.MontoEnvioContabilidad);
+            ViewData["MontoEnvioContabilidad"] = new SelectList(_context.CalculoDepreciacions, "IdCd", "MontoDepreciadoCd", envioContabilidad.MontoEnvioContabilidad);
             return View(envioContabilidad);
         }
 
@@ -145,7 +146,6 @@ namespace AssetGuard_Project.Controllers
                 return NotFound();
             }
             ViewData["MontoEnvioContabilidad"] = new SelectList(_context.CalculoDepreciacions, "IdCd", "MontoDepreciadoCd", envioContabilidad.MontoEnvioContabilidad);
-
             return View(envioContabilidad);
         }
 
@@ -154,7 +154,7 @@ namespace AssetGuard_Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdEC,DescripcionEC,Auxiliar,CuentaDB,CuentaCR")] EnvioContabilidad envioContabilidad)
+        public async Task<IActionResult> Edit(int id, [Bind("IdEC,DescripcionEC,Auxiliar,CuentaDB,CuentaCR,MontoEnvioContabilidad")] EnvioContabilidad envioContabilidad)
         {
             if (id != envioContabilidad.IdEC)
             {
