@@ -19,13 +19,19 @@
             </div>
             <div class="form-group">
                 <label asp-for="CuentaContableCompraTa" class="control-label"></label>
-                <input asp-for="CuentaContableCompraTa" class="form-control" />
-                <span asp-validation-for="CuentaContableCompraTa" class="text-danger"></span>
+                @Html.DropDownListFor(model => model.CuentaContableCompraTa, new List<SelectListItem>
+                {
+                new SelectListItem { Text = "Gasto depreciación Activos Fijos", Value = "65", Selected = true},
+                new SelectListItem { Text = "Depreciación Acumulada Activos Fijos", Value = "66"}
+                }, new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label asp-for="CuentaContableDepreciacionTa" class="control-label"></label>
-                <input asp-for="CuentaContableDepreciacionTa" class="form-control" />
-                <span asp-validation-for="CuentaContableDepreciacionTa" class="text-danger"></span>
+                @Html.DropDownListFor(model => model.CuentaContableDepreciacionTa, new List<SelectListItem>
+                {
+                new SelectListItem { Text = "Gasto depreciación Activos Fijos", Value = "65", Selected = true},
+                new SelectListItem { Text = "Depreciación Acumulada Activos Fijos", Value = "66"}
+                }, new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label asp-for="EstadoTa" class="control-label"></label>
