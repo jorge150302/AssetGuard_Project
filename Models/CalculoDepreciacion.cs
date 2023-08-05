@@ -6,18 +6,16 @@ namespace AssetGuard_Project.Models;
 
 public partial class CalculoDepreciacion
 {
-  
+    [Key]
+    [Required]
     public int IdCd { get; set; }
 
     [Display(Name = "Años del Proceso")]
     [Required(ErrorMessage = "Debe ingresar el Año")]
-    [StringLength(4)]
     [Range(0, int.MaxValue, ErrorMessage = "Ingrese un Año en valor numerico")]
     public string? AnoProcesoCd { get; set; }
 
     [Display(Name = "Meses del Proceso")]
-    [Required(ErrorMessage = "Debe ingresar el Mes")]
-    [RegularExpression("([0-9]+)", ErrorMessage = "Ingrese un Mes en valor numerico")]
     public string? MesProcesoCd { get; set; }
 
     [Display(Name = "Activo Fijo")]
@@ -32,7 +30,10 @@ public partial class CalculoDepreciacion
     [Required(ErrorMessage = "Debe ingresar un monto depreciado")]
     [Range(0, double.MaxValue, ErrorMessage = "Ingrese un número positivo")]
     public decimal? MontoDepreciadoCd { get; set; }
-    public virtual ICollection<EnvioContabilidad> EnvioContabilidads { get; set; } = new List<EnvioContabilidad>();
+    [Display(Name = "Activo Fijo")]
+    public virtual ActivosFijo? ActivoFijoCdNavigation { get; set; }
+
+    
 
     [Display(Name = "Depreciación acumulada")]
     public decimal  DepreciacionAcumuladaCd { get; set; }
@@ -44,10 +45,9 @@ public partial class CalculoDepreciacion
     [Display(Name = "Cuenta Depreciación")]
     [Required(ErrorMessage = "Debe ingresar la Cuenta de Depreciación")]
     public int? CuentaDepreciacion { get; set; }
-    [Display(Name = "Activo Fijo")]
-    public virtual ActivosFijo? ActivoFijoCdNavigation { get; set; }
 
-   
+    public virtual ICollection<EnvioContabilidad> EnvioContabilidades { get; set; } = new List<EnvioContabilidad>();
+
 
     public static decimal CalcularDepreciacionAcumulada(decimal Monto, int CantidadAños)
     {

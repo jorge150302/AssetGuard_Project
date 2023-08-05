@@ -88,7 +88,8 @@ public partial class AssetGuardDbContext : DbContext
                 .HasColumnType("decimal(18, 2)")
                 .HasColumnName("MontoDepreciadoCD");
 
-            entity.HasOne(d => d.ActivoFijoCdNavigation).WithMany(p => p.CalculoDepreciacions)
+            entity.HasOne(d => d.ActivoFijoCdNavigation)
+                .WithMany(p => p.CalculoDepreciacions)
                 .HasForeignKey(d => d.ActivoFijoCd)
                 .HasConstraintName("FK__CalculoDe__Activ__4222D4EF");
         });
@@ -165,9 +166,10 @@ public partial class AssetGuardDbContext : DbContext
                 .HasColumnName("DescripcionEC");
 
             entity.HasOne(d => d.MontoEnvioContabilidadNavigation)
-                .WithMany(p => p.EnvioContabilidads)
+                .WithMany(p => p.EnvioContabilidades)
                 .HasForeignKey(d => d.MontoEnvioContabilidad)
                 .HasConstraintName("FK__EnvioCont__Monto__5CD6CB2B");
+
         });
 
         OnModelCreatingPartial(modelBuilder);

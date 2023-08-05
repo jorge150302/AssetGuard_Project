@@ -26,11 +26,12 @@ namespace AssetGuard_Project.Controllers
         // GET: EnvioContabilidads
         public async Task<IActionResult> Index()
         {
-              return _context.EnvioContabilidad != null ? 
-                          View(await _context.EnvioContabilidad.ToListAsync()) :
-                          Problem("Entity set 'AssetGuardDbContext.EnvioContabilidad'  is null.");
-        }
+            var assetGuardDbContext = _context.EnvioContabilidad.Include(c => c.MontoEnvioContabilidadNavigation);
 
+
+            return View(await assetGuardDbContext.ToListAsync());
+        }
+        // ENVIO CONTA
         public async Task<IActionResult> EnviarSolicitud(EnvioContabilidad datos)
         {
             try
@@ -96,6 +97,7 @@ namespace AssetGuard_Project.Controllers
             }
 
             var envioContabilidad = await _context.EnvioContabilidad
+                .Include(c => c.MontoEnvioContabilidadNavigation)
                 .FirstOrDefaultAsync(m => m.IdEC == id);
             if (envioContabilidad == null)
             {
@@ -108,6 +110,7 @@ namespace AssetGuard_Project.Controllers
         // GET: EnvioContabilidads/Create
         public IActionResult Create()
         {
+
             return View();
         }
 
@@ -124,6 +127,7 @@ namespace AssetGuard_Project.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MontoEnvioContabilidad"] = new SelectList(_context.CalculoDepreciacions, "IdCd", "IdCd", envioContabilidad.MontoEnvioContabilidad);
             return View(envioContabilidad);
         }
 
@@ -140,6 +144,8 @@ namespace AssetGuard_Project.Controllers
             {
                 return NotFound();
             }
+            ViewData["MontoEnvioContabilidad"] = new SelectList(_context.CalculoDepreciacions, "IdCd", "MontoDepreciadoCd", envioContabilidad.MontoEnvioContabilidad);
+
             return View(envioContabilidad);
         }
 
@@ -175,6 +181,8 @@ namespace AssetGuard_Project.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MontoEnvioContabilidad"] = new SelectList(_context.CalculoDepreciacions, "IdCd", "MontoDepreciadoCd", envioContabilidad.MontoEnvioContabilidad);
+
             return View(envioContabilidad);
         }
 
@@ -187,6 +195,7 @@ namespace AssetGuard_Project.Controllers
             }
 
             var envioContabilidad = await _context.EnvioContabilidad
+                .Include(c => c.MontoEnvioContabilidadNavigation)
                 .FirstOrDefaultAsync(m => m.IdEC == id);
             if (envioContabilidad == null)
             {
