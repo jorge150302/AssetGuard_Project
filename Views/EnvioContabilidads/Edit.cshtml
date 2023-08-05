@@ -83,6 +83,7 @@
                 cuentaCR: CuentaCR,
                 monto: MontoEnvioContabilidad
             };
+           
             // Realizar la llamada AJAX al controlador asincrónico
             $.ajax({
                 url: '@Url.Action("EnviarSolicitud", "EnvioContabilidads")',
@@ -99,8 +100,11 @@
                     console.error(error);
                     alert("Ha ocurrido un error al realizar la solicitud.");
                 }
+                                 
             });
+
         });
+        
     });
 </script>
 
