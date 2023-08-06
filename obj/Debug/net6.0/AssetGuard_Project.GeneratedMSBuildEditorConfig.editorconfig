@@ -5,161 +5,160 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AssetGuard_Project
 build_property.RootNamespace = AssetGuard_Project
-build_property.ProjectDir = C:\Users\sirbo\source\repos\AssetGuard_Project\
+build_property.ProjectDir = C:\Users\jorge\source\repos\AssetGuard_Project\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\sirbo\source\repos\AssetGuard_Project
+build_property.MSBuildProjectDirectory = C:\Users\jorge\source\repos\AssetGuard_Project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/ActivosFijos/Create.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/ActivosFijos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZvc0Zpam9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/ActivosFijos/Delete.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/ActivosFijos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZvc0Zpam9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/ActivosFijos/Details.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/ActivosFijos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZvc0Zpam9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/ActivosFijos/Edit.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/ActivosFijos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZvc0Zpam9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/ActivosFijos/Index.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/ActivosFijos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZvc0Zpam9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Create.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsY3Vsb0RlcHJlY2lhY2lvbmVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Delete.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsY3Vsb0RlcHJlY2lhY2lvbmVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Details.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsY3Vsb0RlcHJlY2lhY2lvbmVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Edit.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsY3Vsb0RlcHJlY2lhY2lvbmVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Index.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/CalculoDepreciaciones/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsY3Vsb0RlcHJlY2lhY2lvbmVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Departamentos/Create.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Departamentos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Departamentos/Delete.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Departamentos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Departamentos/Details.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Departamentos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Departamentos/Edit.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Departamentos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Departamentos/Index.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Departamentos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0YW1lbnRvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Empleados/Create.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Empleados/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Empleados/Delete.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Empleados/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Empleados/Details.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Empleados/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Empleados/Edit.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Empleados/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Empleados/Index.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Empleados/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Create.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9Db250YWJpbGlkYWRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Delete.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9Db250YWJpbGlkYWRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Details.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9Db250YWJpbGlkYWRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Edit.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9Db250YWJpbGlkYWRzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Index.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/EnvioContabilidads/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW52aW9Db250YWJpbGlkYWRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Home/Index.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Home/Privacy.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Shared/Error.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/TiposActivos/Create.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/TiposActivos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NBY3Rpdm9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/TiposActivos/Delete.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/TiposActivos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NBY3Rpdm9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/TiposActivos/Details.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/TiposActivos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NBY3Rpdm9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/TiposActivos/Edit.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/TiposActivos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NBY3Rpdm9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/TiposActivos/Index.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/TiposActivos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb3NBY3Rpdm9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/_ViewImports.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/_ViewStart.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sirbo/source/repos/AssetGuard_Project/Views/Shared/_Layout.cshtml]
+[C:/Users/jorge/source/repos/AssetGuard_Project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vjcboivkp3
