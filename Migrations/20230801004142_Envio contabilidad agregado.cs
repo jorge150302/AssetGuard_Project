@@ -235,7 +235,7 @@ namespace AssetGuard_Project.Migrations
                     Auxiliar = table.Column<int>(type: "int", nullable: true),
                     CuentaDB = table.Column<int>(type: "int", nullable: true),
                     CuentaCR = table.Column<int>(type: "int", nullable: true),
-                    MontoEnvioContabilidad = table.Column<int>(type: "int", nullable: false)
+                    MontoEnvioContabilidad = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
